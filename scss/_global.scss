@@ -1,0 +1,148 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: min(1110px, 100%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.pad {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.btn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: $Bright-Red;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  color: rgba($Very-Pale-Red, 0.9);
+  padding: 0.75rem 2rem 0.875rem;
+  border-radius: 2rem;
+  box-shadow: 0 0.5rem 1rem -0.5rem $Bright-Red;
+  @extend %tr;
+
+  &:hover {
+    background: lighten($Bright-Red, 10%);
+  }
+
+  &-white {
+    background: white;
+    color: $Bright-Red;
+
+    &:hover {
+      background: white;
+      color: lighten($Bright-Red, 20%);
+    }
+  }
+
+  &-submit {
+    box-shadow: none;
+  }
+}
+
+.number {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $Bright-Red;
+  font-weight: 700;
+  color: white;
+  padding: 0.375rem 1.5rem 0.625rem;
+  border-radius: 2rem;
+  width: fit-content;
+
+  @include tablet {
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 1.5rem;
+      height: 100%;
+      width: 100vw;
+      background: $Very-Pale-Red;
+    }
+  }
+}
+
+input {
+  border: none;
+  outline: none;
+  background: white;
+  padding: 0.75rem 1rem 0.875rem 1.5rem;
+  border-radius: 2rem;
+  font-family: inherit;
+  color: $Dark-Blue;
+
+  &::placeholder {
+    font-size: 0.8125rem;
+    letter-spacing: -0.01em;
+    color: rgba($Very-Dark-Blue, 0.5);
+  }
+}
+
+.hamburger {
+  cursor: pointer;
+  width: 1.5rem;
+  height: 1.5rem;
+  justify-content: flex-end;
+  align-items: center;
+  display: none;
+
+  @include st {
+    display: flex;
+  }
+
+  &-icon {
+    position: relative;
+    width: 1.5rem;
+    height: 0.25rem;
+    background: $Dark-Blue;
+    pointer-events: none;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 1.5rem;
+      height: 0.25rem;
+      background: $Dark-Blue;
+      @extend %tr;
+    }
+
+    &::before {
+      bottom: 0.5rem;
+    }
+
+    &::after {
+      top: 0.5rem;
+    }
+  }
+
+  &.active {
+    .hamburger-icon {
+      background: transparent;
+
+      &::before {
+        bottom: 0;
+        transform: rotate(45deg);
+      }
+
+      &::after {
+        top: 0;
+        transform: rotate(-45deg);
+      }
+    }
+  }
+}

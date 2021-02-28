@@ -1,0 +1,119 @@
+body {
+  font-family: "Be Vietnam", sans-serif;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-weight: 700;
+  color: $Dark-Blue;
+  letter-spacing: -0.018em;
+}
+
+h1 {
+  font-size: 3.5rem;
+  line-height: 64px;
+
+  @include laptop {
+    font-size: 2.5rem;
+    line-height: 50px;
+  }
+}
+
+h2,
+h3,
+h4 {
+  font-size: 2.5rem;
+  line-height: 44px;
+}
+
+h2 {
+  @include laptop {
+    line-height: 50px;
+  }
+}
+
+h3 {
+  @include laptop {
+    font-size: 2rem;
+  }
+}
+
+h4 {
+  @include laptop {
+    font-size: 1.875rem;
+  }
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+p {
+  color: $Dark-Grayish-Blue;
+  line-height: 1.625;
+
+  &:not(.p-header) {
+    @include tablet {
+      font-size: 0.875rem;
+      line-height: 2;
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+
+  &.header-link {
+    font-size: 0.8125rem;
+    font-weight: 500;
+    color: $Dark-Blue;
+    @extend %tr;
+
+    &:hover {
+      color: $Dark-Grayish-Blue;
+    }
+  }
+
+  &.footer-link {
+    font-size: 0.9375;
+    letter-spacing: -0.018em;
+    color: rgba(white, 0.8);
+    @extend %tr;
+
+    &:hover {
+      color: $Bright-Red;
+    }
+  }
+
+  &.social-link {
+    font-size: 1.25rem;
+    color: white;
+    @extend %tr;
+
+    &:hover {
+      color: $Bright-Red;
+    }
+  }
+
+  &.modal-link {
+    letter-spacing: -0.01em;
+    font-weight: 700;
+    color: $Dark-Blue;
+  }
+}
+
+label {
+  font-size: 0.625rem;
+  font-style: italic;
+  color: rgba(red, 0.6);
+}
+
+.copy {
+  font-size: 0.8125rem;
+  letter-spacing: -0.018em;
+  color: rgba(white, 0.4);
+}

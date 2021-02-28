@@ -1,0 +1,34 @@
+.menu-modal {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top, rgba($Very-Dark-Blue, 0.8), transparent);
+  padding-top: 6.5rem;
+  opacity: 0;
+  pointer-events: none;
+  @extend %tr;
+
+  &.active {
+    opacity: 1;
+    pointer-events: unset;
+  }
+
+  nav {
+    padding: 2.5rem 0;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 0.25rem;
+    transform: translateX(100vw);
+    @extend %tr;
+
+    &.active {
+      transform: translateX(0);
+    }
+
+    & > * + * {
+      margin-top: 1.5rem;
+    }
+  }
+}
